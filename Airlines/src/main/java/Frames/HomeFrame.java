@@ -10,7 +10,7 @@ package Frames;
  * @author shishira
  */
 public class HomeFrame extends javax.swing.JFrame {
-
+        
     /**
      * Creates new form HomeFrame1
      */
@@ -56,8 +56,18 @@ public class HomeFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("Check Status");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("My Tickets");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Contact Us");
 
@@ -131,7 +141,28 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         // TODO add your handling code here:
+        EnquireTickets enquireTickets = new EnquireTickets(); 
+        enquireTickets.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        CheckTicketFrame checkTicketFrame = new CheckTicketFrame(); 
+        checkTicketFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        LoginFrame loginFrame = new LoginFrame(); 
+        loginFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+      
+                                     
+
 
     /**
      * @param args the command line arguments
