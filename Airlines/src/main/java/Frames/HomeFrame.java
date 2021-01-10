@@ -55,7 +55,7 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Check Status");
+        jButton2.setText("About Us");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -156,8 +156,8 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        LoginFrame loginFrame = new LoginFrame(); 
-        loginFrame.setVisible(true);
+        CheckTicketFrame checkTicketFrame = new CheckTicketFrame();
+        checkTicketFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
       
