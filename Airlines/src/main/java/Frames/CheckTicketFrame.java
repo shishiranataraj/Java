@@ -69,7 +69,7 @@ public class CheckTicketFrame extends javax.swing.JFrame {
         jLabel2.setText("Click row to select Ticket");
 
         jButton1.setText("Print Ticket");
-        jButton1.addActionListener( java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
