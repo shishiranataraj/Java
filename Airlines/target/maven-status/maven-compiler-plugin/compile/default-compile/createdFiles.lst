@@ -1,5 +1,6 @@
 Frames/RegisterPassengerFrame$4.class
 Frames/LoginFrame$1.class
+dom/Flight.class
 Frames/HomeFrame$3.class
 Test/ConnectionTest.class
 Frames/CheckTicketFrame.class
@@ -18,11 +19,15 @@ Frames/HomeFrame$4.class
 Frames/CheckTicketFrame$1.class
 Frames/RegisterPassengerFrame$5.class
 Frames/LoginFrame.class
+Frames/EnquireTickets$3.class
+Frames/ConfirmBooking$1.class
 Frames/RegisterPassengerFrame$3.class
 Frames/HomeFrame$2.class
 Frames/LoginFrame$2.class
 Frames/LoginFrame$4.class
 Frames/RegisterPassengerFrame$1.class
+dao/FlightDaoImpl.class
+Frames/ConfirmBooking.class
 Frames/CheckTicketFrame$2.class
 Frames/FlightListFrame$1.class
 Frames/EnquireTickets$1.class

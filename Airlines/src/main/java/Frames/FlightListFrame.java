@@ -5,6 +5,11 @@
  */
 package Frames;
 
+import dao.FlightDaoImpl;
+import dom.Flight;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author shishira
@@ -15,7 +20,27 @@ public class FlightListFrame extends javax.swing.JFrame {
      * Creates new form FlightListFrame
      */
     public FlightListFrame() {
-        initComponents();
+          initComponents();
+        
+        FlightDaoImpl fdi = new FlightDaoImpl();
+        List<Flight> flight = fdi.getFlights();
+        
+        System.out.println(flight.size());
+        
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Flight No");
+        tableModel.addColumn("Route ID");
+        tableModel.addColumn("From City");
+        tableModel.addColumn("To_City");
+        tableModel.addColumn("Carrier Name");
+        tableModel.addColumn("Price");
+        
+        Flight flights = null;
+        for(int i = 0; i < flight.size(); i++) {
+            flights = flight.get(i);
+            tableModel.insertRow(i, new Object[] {flights.getF_no(), flights.getRid(),flights.getFrom_city(), flights.getTo_city(), flights.getCarrier_name(), flights.getPrice()});
+        }
+        jTable1.setModel(tableModel);
     }
 
     /**
