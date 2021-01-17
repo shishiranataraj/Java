@@ -5,6 +5,13 @@
  */
 package Frames;
 
+import dao.EnquireDaoImpl;
+import dao.FlightDaoImpl;
+import dom.Flight;
+import dom.Routes;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author shishira
@@ -14,8 +21,25 @@ public class EnquireTickets extends javax.swing.JFrame {
     /**
      * Creates new form EnquireTickets
      */
+    
+      
     public EnquireTickets() {
         initComponents();
+         EnquireDaoImpl edi = new EnquireDaoImpl();
+         String from_city = "Bangalore";
+        List<Routes> route = edi.getRoute();
+       
+        System.out.println(route.size());
+        
+        jComboBox1.removeAllItems();
+        Routes routes = null;
+        for(int i = 0; i < route.size(); i++) {
+            routes = route.get(i);
+           System.out.println(routes);
+        String itemBox1 = routes.getFrom_city();
+           jComboBox1.addItem(itemBox1);
+           System.out.println(jComboBox1.getSelectedItem());
+        }
     }
 
     /**
@@ -62,6 +86,11 @@ public class EnquireTickets extends javax.swing.JFrame {
         jLabel4.setText("To");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -110,7 +139,7 @@ public class EnquireTickets extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(182, 182, 182)
+                        .addGap(219, 219, 219)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -182,6 +211,11 @@ public class EnquireTickets extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add     your handling code here:
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -236,4 +270,8 @@ public class EnquireTickets extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void addItem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -104,7 +104,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" pref="85" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" pref="138" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -186,6 +186,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

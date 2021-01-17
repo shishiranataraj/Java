@@ -13,7 +13,7 @@ public class Flight {
     private int f_no;
     private int rid;
     private String from_city;
-    private String to_city;
+    public String to_city;
     private String carrier_name;
     private String date_of_travel;
     private String day_of_week;

@@ -7,6 +7,7 @@ package Frames;
 
 import dao.FlightDaoImpl;
 import dom.Flight;
+import static java.time.Clock.system;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,8 +24,9 @@ public class FlightListFrame extends javax.swing.JFrame {
           initComponents();
         
         FlightDaoImpl fdi = new FlightDaoImpl();
-        List<Flight> flight = fdi.getFlights();
-        
+         String from_city = "Bangalore";
+        List<Flight> flight = fdi.getFlights(from_city, "Chennai");
+       
         System.out.println(flight.size());
         
         DefaultTableModel tableModel = new DefaultTableModel();
@@ -38,8 +40,10 @@ public class FlightListFrame extends javax.swing.JFrame {
         Flight flights = null;
         for(int i = 0; i < flight.size(); i++) {
             flights = flight.get(i);
+           System.out.println(flights);
+          
             tableModel.insertRow(i, new Object[] {flights.getF_no(), flights.getRid(),flights.getFrom_city(), flights.getTo_city(), flights.getCarrier_name(), flights.getPrice()});
-        }
+             }
         jTable1.setModel(tableModel);
     }
 

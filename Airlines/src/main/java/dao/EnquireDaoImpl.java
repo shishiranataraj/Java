@@ -4,42 +4,50 @@
  * and open the template in the editor.
  */
 package dao;
+
 import airlines.Utilities.JdbcUtil;
-import java.util.List;
 import dom.Flight;
+import dom.Routes;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author shishira
  */
-public class FlightDaoImpl {
-    public List<Flight> getFlights(String from_city,String to_city){
+public class EnquireDaoImpl {
+     public List<Routes> getRoute(){
        Connection connection = null;
        Statement statement = null;
        ResultSet resultSet = null;
-       System.out.println("Here the var is " + from_city);
-       List<Flight> flights = new ArrayList<Flight>();
-       String sql = "select * from flight_info where from_city =  '" + from_city + " ' ";
+       System.out.println("Here the var is ");
+       List<Routes> routes = new ArrayList<Routes>();
+       String sql = "select * from routes ";
      try{
       connection = JdbcUtil.getConnection("Airlines");
       statement = connection.createStatement();
       resultSet = statement.executeQuery(sql);
       
       while(resultSet.next()){
-          flights.add(new Flight(
-                    resultSet.getInt("f_no"),
+          routes.add(new Routes(
+                    
                     resultSet.getInt("rid"),
                     resultSet.getString("from_city"),
                     resultSet.getString("to_city"),
-                    resultSet.getString("carrier_name"),
-                    resultSet.getDate("date_of_travel").toString(),
-                    resultSet.getString("day_of_week"),
-                    resultSet.getFloat("price")
+                    resultSet.getBoolean("Monday"),
+                    resultSet.getBoolean("Tuesday"),
+                    resultSet.getBoolean("Wednesday"),
+                    resultSet.getBoolean("Thursday"),
+                    resultSet.getBoolean("Friday"),
+                    resultSet.getBoolean("Saturday"),
+                    resultSet.getBoolean("Sunday")
+
+
+             
                   
                   
                   
@@ -47,7 +55,8 @@ public class FlightDaoImpl {
           
           ));
       }
-     }
+       
+}
      catch (SQLException sqle){
          System.out.println(sqle);
      }
@@ -56,8 +65,6 @@ public class FlightDaoImpl {
             JdbcUtil.closeStatement(statement);
         }
         System.out.println("Entered");
-        return flights;
-    }
-    
+        return routes;
+     }
 }
-
